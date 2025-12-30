@@ -1,0 +1,7 @@
+{
+  "name": "Justice for Vega",
+  "description": "A comprehensive digital defense dossier analyzing the legal threads, case facts, and critical medical vulnerabilities of Michael Vega.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
