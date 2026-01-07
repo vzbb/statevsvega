@@ -6,6 +6,7 @@ import ThreadsSection from './components/ThreadsSection';
 import MedicalSection from './components/MedicalSection';
 import MediaSection from './components/MediaSection';
 import VoiceAgent from './components/VoiceAgent';
+import LegalNoticeModal from './components/LegalNoticeModal';
 import { ViewState } from './types';
 
 const App: React.FC = () => {
@@ -44,6 +45,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-200 selection:bg-teal-500 selection:text-white relative">
+      <LegalNoticeModal />
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-zinc-900/20 z-[100]">
         <div 
