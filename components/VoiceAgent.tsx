@@ -226,11 +226,18 @@ const VoiceAgent: React.FC<VoiceAgentProps> = ({ currentView, layout = 'fixed' }
       const combinedInstruction = `${BASE_SYSTEM_INSTRUCTION}\n\nINITIAL CONTEXT:\n${currentContext}`;
 
       const config = {
-        model: 'gemini-2.5-flash-native-audio-preview-09-2025',
+        model: 'gemini-2.5-flash-native-audio-preview-12-2025',
         config: {
           responseModalities: [Modality.AUDIO],
           speechConfig: {
-            voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Charon' } },
+            voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Zubenelgenubi' } },
+          },
+          realtimeInputConfig: {
+            turnCoverage: 'TURN_INCLUDES_ALL_INPUT',
+          },
+          contextWindowCompression: {
+            triggerTokens: 25600,
+            slidingWindow: { targetTokens: 12800 },
           },
           systemInstruction: combinedInstruction,
         },
