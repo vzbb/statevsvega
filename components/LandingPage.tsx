@@ -24,14 +24,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ setView }) => {
         <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-6 pb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
         
         {/* Legal Header */}
-        <div className="border-b border-zinc-800/60 pb-6 mb-8 relative">
+        <div className="border-b border-zinc-800/60 pb-4 mb-6 relative">
            {/* Header Glow */}
            <div className="absolute -left-10 -top-10 w-40 h-40 bg-teal-500/5 blur-3xl rounded-full pointer-events-none"></div>
 
-           <h1 className="relative text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400 font-serif tracking-tight mb-3 drop-shadow-sm">
+           <h1 className="relative text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400 font-serif tracking-tight mb-2 drop-shadow-sm">
              State v. Vega
            </h1>
            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
@@ -77,10 +77,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ setView }) => {
                    </p>
                  </div>
                  <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-amber-500 transition-all duration-500 group-hover:w-full" />
-               </div>
-
-               <div className="inline-flex items-center self-end gap-2 px-3 py-1 rounded-full bg-rose-950/30 border border-rose-500/20 text-rose-300 text-[10px] font-bold uppercase tracking-widest backdrop-blur-md">
-                 <AlertOctagon size={12} className="text-rose-500" /> Medical Emergency
                </div>
              </div>
            </div>
