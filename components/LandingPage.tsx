@@ -34,12 +34,32 @@ const LandingPage: React.FC<LandingPageProps> = ({ setView }) => {
            <h1 className="relative text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400 font-serif tracking-tight mb-6 drop-shadow-sm">
              State v. Vega
            </h1>
-           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-             <p className="text-xl text-zinc-400 font-light tracking-wide max-w-2xl leading-relaxed">
-               The Exoneration of the Architect. The Prosecution of the Scapegoat.
-             </p>
-             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-950/30 border border-rose-500/30 text-rose-200 text-xs font-semibold uppercase tracking-widest shadow-[0_0_15px_rgba(244,63,94,0.1)] backdrop-blur-md">
-               <AlertOctagon size={14} className="text-rose-500" /> Medical Emergency
+           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+             <div className="text-xl text-zinc-400 font-light tracking-wide max-w-2xl leading-relaxed space-y-1">
+               <span className="block text-zinc-200 font-normal">The Exoneration of the Architect.</span>
+               <span className="block text-zinc-500">The Prosecution of the Scapegoat.</span>
+             </div>
+             
+             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+               <button 
+                 onClick={() => setView(ViewState.THREADS)}
+                 className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-950/30 border border-teal-500/30 hover:bg-teal-900/40 hover:border-teal-400/50 transition-all cursor-pointer"
+               >
+                 <Gavel size={16} className="text-teal-400 group-hover:text-teal-300" />
+                 <span className="text-sm font-medium text-teal-100 group-hover:text-white">View Legal Threads</span>
+               </button>
+
+               <button 
+                 onClick={() => setView(ViewState.MEDIA)}
+                 className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-950/30 border border-amber-500/30 hover:bg-amber-900/40 hover:border-amber-400/50 transition-all cursor-pointer"
+               >
+                 <PlayCircle size={16} className="text-amber-400 group-hover:text-amber-300" />
+                 <span className="text-sm font-medium text-amber-100 group-hover:text-white">Media & Evidence</span>
+               </button>
+
+               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-950/30 border border-rose-500/30 text-rose-200 text-xs font-semibold uppercase tracking-widest shadow-[0_0_15px_rgba(244,63,94,0.1)] backdrop-blur-md">
+                 <AlertOctagon size={14} className="text-rose-500" /> Medical Emergency
+               </div>
              </div>
            </div>
         </div>
