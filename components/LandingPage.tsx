@@ -31,7 +31,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ setView }) => {
            {/* Header Glow */}
            <div className="absolute -left-10 -top-10 w-40 h-40 bg-teal-500/5 blur-3xl rounded-full pointer-events-none"></div>
 
-           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
              <div className="flex flex-col">
                <h1 className="relative text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400 font-serif tracking-tight mb-2 drop-shadow-sm">
                  State v. Vega
