@@ -67,7 +67,7 @@ const LegalNoticeModal: React.FC = () => {
             </div>
 
             <p className="pt-2 border-t border-zinc-800/50">
-              This matter is now pending before the <strong className="text-white">Eleventh District Court of Appeals (Ohio)</strong> under <strong className="text-white">Case No. 2025-I-136</strong>.
+              This matter is now pending before the <strong className="text-white">Eleventh District Court of Appeals (Ohio)</strong> under <strong className="text-white">Case No. 2025-I.-136</strong>.
             </p>
             
             <p className="p-4 bg-zinc-950/50 border-l-2 border-amber-500/50 rounded-r-lg italic">
