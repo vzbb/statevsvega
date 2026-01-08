@@ -92,6 +92,29 @@ const LandingPage: React.FC<LandingPageProps> = ({ setView }) => {
           {/* Column 1: The Brief / Hook */}
           <div className="lg:col-span-7 space-y-8">
             <div className="prose prose-invert max-w-none">
+              
+              {/* Case Status Section - Moved to Top */}
+              <div className="border-l-4 border-zinc-700 pl-6 py-2 mb-8 space-y-4 bg-zinc-900/20 rounded-r-lg">
+                <h4 className="text-lg font-bold text-zinc-200 uppercase tracking-wider">Case Status</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                  <div>
+                    <strong className="block text-white mb-1">State of Ohio v. Michael A. Vega</strong>
+                    <p className="text-zinc-400">Lake County (OH) Court of Common Pleas</p>
+                    <p className="text-zinc-500 font-mono text-xs">Case No. 24CR000850</p>
+                  </div>
+                  <div>
+                    <strong className="block text-white mb-1">Eleventh District Court of Appeals</strong>
+                    <p className="text-zinc-400">Pending Appeal</p>
+                    <p className="text-zinc-500 font-mono text-xs">Case No. 2025-I.-136</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-4 text-xs font-mono text-zinc-500 pt-2 border-t border-zinc-800/50">
+                  <span>• Plea Accepted: <span className="text-zinc-300">Sept 3, 2025</span></span>
+                  <span>• Sentence Entry: <span className="text-zinc-300">Oct 15, 2025</span></span>
+                  <span>• Appeal Filed: <span className="text-zinc-300">Nov 14, 2025</span></span>
+                </div>
+              </div>
+
               <p className="text-lg leading-relaxed text-zinc-300 font-serif border-l-4 border-teal-500 pl-6 bg-gradient-to-r from-teal-500/5 to-transparent py-2 rounded-r-lg">
                 <strong>The Issue:</strong> Michael Vega, a triple amputee dependent on a failing experimental prototype limb, faces decades in prison for a high-speed pursuit initiated and commanded by Christopher Foster—a fugitive explicitly released by law enforcement at the scene.
               </p>
@@ -125,28 +148,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ setView }) => {
                     To acknowledge Vega's innocence is to admit that the system released a dangerous criminal to protect a budget line item. 
                     It is far safer for the institution to quietly convict the scapegoat than to expose the architects.
                   </p>
-                </div>
-              </div>
-
-              {/* Case Status & Timeline Section */}
-              <div className="border-l-4 border-zinc-700 pl-6 py-2 my-8 space-y-4">
-                <h4 className="text-lg font-bold text-zinc-200 uppercase tracking-wider">Case Status & Timeline</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                  <div>
-                    <strong className="block text-white mb-1">State of Ohio v. Michael A. Vega</strong>
-                    <p className="text-zinc-400">Lake County (OH) Court of Common Pleas</p>
-                    <p className="text-zinc-500 font-mono text-xs">Case No. 24CR000850</p>
-                  </div>
-                  <div>
-                    <strong className="block text-white mb-1">Eleventh District Court of Appeals</strong>
-                    <p className="text-zinc-400">Pending Appeal</p>
-                    <p className="text-zinc-500 font-mono text-xs">Case No. 2025-I.-136</p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-4 text-xs font-mono text-zinc-500 pt-2 border-t border-zinc-800/50">
-                  <span>• Plea Accepted: <span className="text-zinc-300">Sept 3, 2025</span></span>
-                  <span>• Sentence Entry: <span className="text-zinc-300">Oct 15, 2025</span></span>
-                  <span>• Appeal Filed: <span className="text-zinc-300">Nov 14, 2025</span></span>
                 </div>
               </div>
 
