@@ -34,31 +34,53 @@ const LandingPage: React.FC<LandingPageProps> = ({ setView }) => {
            <h1 className="relative text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400 font-serif tracking-tight mb-6 drop-shadow-sm">
              State v. Vega
            </h1>
-           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mt-4">
              <div className="text-xl text-zinc-400 font-light tracking-wide max-w-2xl leading-relaxed space-y-1">
                <span className="block text-zinc-200 font-normal">The Exoneration of the Architect.</span>
-               <span className="block text-zinc-500">The Prosecution of the Scapegoat.</span>
+               <span className="block text-zinc-500 font-serif italic">The Prosecution of the Scapegoat.</span>
              </div>
              
-             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-               <button 
+             <div className="flex flex-col gap-3 min-w-[320px] lg:max-w-md">
+               {/* Promo 1: Legal Threads */}
+               <div 
                  onClick={() => setView(ViewState.THREADS)}
-                 className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-950/30 border border-teal-500/30 hover:bg-teal-900/40 hover:border-teal-400/50 transition-all cursor-pointer"
+                 className="group relative overflow-hidden p-3.5 rounded-xl bg-zinc-900/40 border border-teal-500/20 hover:border-teal-500/50 transition-all cursor-pointer shadow-lg hover:shadow-teal-900/20 active:scale-[0.98]"
                >
-                 <Gavel size={16} className="text-teal-400 group-hover:text-teal-300" />
-                 <span className="text-sm font-medium text-teal-100 group-hover:text-white">View Legal Threads</span>
-               </button>
+                 <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Gavel size={40} className="text-teal-400" />
+                 </div>
+                 <div className="relative z-10 flex gap-3 items-start">
+                   <div className="mt-1 p-1.5 bg-teal-500/10 rounded-lg text-teal-400">
+                     <Gavel size={16} />
+                   </div>
+                   <p className="text-xs md:text-[13px] leading-relaxed text-zinc-300 group-hover:text-zinc-100 transition-colors">
+                     Read <strong className="text-teal-400">'Threads: A Tapestry of Tragedy'</strong> now to dive straight into the heart of the interwoven betrayals of justice and liberty at play behind Vega's prosecution.
+                   </p>
+                 </div>
+                 <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-teal-500 transition-all duration-500 group-hover:w-full" />
+               </div>
 
-               <button 
+               {/* Promo 2: Podcast */}
+               <div 
                  onClick={() => setView(ViewState.MEDIA)}
-                 className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-950/30 border border-amber-500/30 hover:bg-amber-900/40 hover:border-amber-400/50 transition-all cursor-pointer"
+                 className="group relative overflow-hidden p-3.5 rounded-xl bg-zinc-900/40 border border-amber-500/20 hover:border-amber-500/50 transition-all cursor-pointer shadow-lg hover:shadow-amber-900/20 active:scale-[0.98]"
                >
-                 <PlayCircle size={16} className="text-amber-400 group-hover:text-amber-300" />
-                 <span className="text-sm font-medium text-amber-100 group-hover:text-white">Media & Evidence</span>
-               </button>
+                 <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <PlayCircle size={40} className="text-amber-400" />
+                 </div>
+                 <div className="relative z-10 flex gap-3 items-start">
+                   <div className="mt-1 p-1.5 bg-amber-500/10 rounded-lg text-amber-400">
+                     <PlayCircle size={16} />
+                   </div>
+                   <p className="text-xs md:text-[13px] leading-relaxed text-zinc-300 group-hover:text-zinc-100 transition-colors">
+                     Listen to new episode of BtB, focusing on Michael Vega's plight and battle, <strong className="text-amber-400">'The Anatomy of a Betrayal'</strong>.
+                   </p>
+                 </div>
+                 <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-amber-500 transition-all duration-500 group-hover:w-full" />
+               </div>
 
-               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-950/30 border border-rose-500/30 text-rose-200 text-xs font-semibold uppercase tracking-widest shadow-[0_0_15px_rgba(244,63,94,0.1)] backdrop-blur-md">
-                 <AlertOctagon size={14} className="text-rose-500" /> Medical Emergency
+               <div className="inline-flex items-center self-end gap-2 px-3 py-1 rounded-full bg-rose-950/30 border border-rose-500/20 text-rose-300 text-[10px] font-bold uppercase tracking-widest backdrop-blur-md">
+                 <AlertOctagon size={12} className="text-rose-500" /> Medical Emergency
                </div>
              </div>
            </div>
