@@ -53,15 +53,29 @@ const LegalNoticeModal: React.FC = () => {
           </div>
 
           <div className="space-y-4 text-zinc-300 leading-relaxed text-sm md:text-base">
-            <p>
-              This website was established to document <strong className="text-white">Case CR-24B000250</strong> (Lake County Court of Common Pleas) and now <strong className="text-white">Case #2025-I-136</strong> (11th District Court of Appeals).
+            <div className="space-y-2">
+              <p>
+                <strong className="text-white block text-lg">State of Ohio v. Michael A. Vega</strong>
+                <span className="text-zinc-400 text-sm">Lake County (OH) Court of Common Pleas // Case No. 24CR000850</span>
+              </p>
+              
+              <div className="grid grid-cols-1 gap-1 text-xs text-zinc-500 border-l border-zinc-800 pl-3 py-1 mt-2">
+                <p>• Guilty plea accepted: <span className="text-zinc-300">Sept 3, 2025</span></p>
+                <p>• Sentence entry: <span className="text-zinc-300">Oct 15, 2025</span></p>
+                <p>• Notice of Appeal filed: <span className="text-zinc-300">Nov 14, 2025</span></p>
+              </div>
+            </div>
+
+            <p className="pt-2 border-t border-zinc-800/50">
+              This matter is now pending before the <strong className="text-white">Eleventh District Court of Appeals (Ohio)</strong> under <strong className="text-white">Case No. 2025-I-136</strong>.
             </p>
             
-            <p className="p-4 bg-zinc-950/50 border-l-2 border-amber-500/50 rounded-r-lg">
-              The defendant, Michael, has diligently represented himself <em>pro se</em> to reach this stage. However, he is now in dire need of professional legal counsel to proceed further.
+            <p className="p-4 bg-zinc-950/50 border-l-2 border-amber-500/50 rounded-r-lg italic">
+              The defendant, Michael, has diligently represented himself pro se to reach this stage. However, he is now in dire need of professional legal counsel to proceed further and ensure a just resolution.
             </p>
             
-            <p className="font-medium text-rose-400">
+            <p className="font-bold text-rose-500 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
               Time is of the essence.
             </p>
           </div>
