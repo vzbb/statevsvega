@@ -27,14 +27,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ setView }) => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
         
         {/* Legal Header */}
-        <div className="border-b border-zinc-800/60 pb-8 mb-12 relative">
+        <div className="border-b border-zinc-800/60 pb-6 mb-8 relative">
            {/* Header Glow */}
            <div className="absolute -left-10 -top-10 w-40 h-40 bg-teal-500/5 blur-3xl rounded-full pointer-events-none"></div>
 
-           <h1 className="relative text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400 font-serif tracking-tight mb-6 drop-shadow-sm">
+           <h1 className="relative text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400 font-serif tracking-tight mb-3 drop-shadow-sm">
              State v. Vega
            </h1>
-           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mt-4">
+           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
              <div className="text-xl text-zinc-400 font-light tracking-wide max-w-2xl leading-relaxed space-y-1">
                <span className="block text-zinc-200 font-normal">The Exoneration of the Architect.</span>
                <span className="block text-zinc-500 font-serif italic">The Prosecution of the Scapegoat.</span>
