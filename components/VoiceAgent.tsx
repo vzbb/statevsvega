@@ -167,7 +167,6 @@ const VoiceAgent: React.FC<VoiceAgentProps> = ({ currentView, layout = 'fixed' }
         
         Please provide a one-sentence executive summary of this specific page to orient the counsel.
       `;
-      sessionRef.current.send([{ text: contextUpdate }], true);
     }
     
     // Also update Chat session context if it exists, but don't trigger a message, just update system instruction via a hidden prompt if needed
@@ -273,7 +272,6 @@ const VoiceAgent: React.FC<VoiceAgentProps> = ({ currentView, layout = 'fixed' }
             // Initial greeting based on current view
             sessionPromise.then(session => {
               sessionRef.current = session;
-              session.send([{ text: `I have just connected. I see we are looking at the ${currentView} section. Introduce yourself and briefly summarize the key legal or medical point of this specific section.` }], true);
             });
           },
           onmessage: async (msg: LiveServerMessage) => {
