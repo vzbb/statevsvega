@@ -353,7 +353,7 @@ const VoiceAgent: React.FC<VoiceAgentProps> = ({ currentView, layout = 'fixed' }
       const combinedInstruction = `${BASE_SYSTEM_INSTRUCTION}\n\nINITIAL CONTEXT:\n${currentContext}`;
 
       chatSessionRef.current = ai.chats.create({
-        model: 'gemini-2.0-flash-exp',
+        model: 'gemini-2.5-flash',
         config: {
           systemInstruction: combinedInstruction,
         },
