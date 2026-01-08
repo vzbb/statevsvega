@@ -12,7 +12,16 @@ const LegalNoticeModal: React.FC = () => {
       const timer = setTimeout(() => {
         setIsOpen(true);
       }, 500);
-      return () => clearTimeout(timer);
+
+      // Auto-close after 15 seconds
+      const closeTimer = setTimeout(() => {
+        handleClose();
+      }, 15500); // 500ms delay + 15s display
+
+      return () => {
+        clearTimeout(timer);
+        clearTimeout(closeTimer);
+      };
     }
   }, []);
 
@@ -25,26 +34,18 @@ const LegalNoticeModal: React.FC = () => {
 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center px-4">
-      {/* Backdrop */}
+      {/* Backdrop - Click to close */}
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 cursor-pointer"
         onClick={handleClose}
       />
       
       {/* Modal Content */}
-      <div className="relative bg-zinc-900 border border-zinc-700/50 rounded-2xl max-w-lg w-full p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-300">
+      <div className="relative bg-zinc-900 border border-zinc-700/50 rounded-2xl max-w-lg w-full p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-300 pointer-events-none">
         
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500 via-indigo-500 to-rose-500 rounded-t-2xl" />
         <div className="absolute -left-10 -top-10 w-32 h-32 bg-teal-500/10 blur-3xl rounded-full pointer-events-none" />
-        
-        <button 
-          onClick={handleClose}
-          className="absolute top-4 right-4 text-zinc-500 hover:text-zinc-300 transition-colors p-1"
-          aria-label="Close modal"
-        >
-          <X size={20} />
-        </button>
 
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3 text-amber-400 mb-2">
@@ -52,7 +53,7 @@ const LegalNoticeModal: React.FC = () => {
             <h2 className="text-xl font-bold tracking-tight text-white">Important Legal Notice</h2>
           </div>
 
-          <div className="space-y-4 text-zinc-300 leading-relaxed text-sm md:text-base">
+          <div className="space-y-4 text-zinc-300 leading-relaxed text-sm md:text-base pointer-events-auto">
             <div className="space-y-2">
               <p>
                 <strong className="text-white block text-lg">State of Ohio v. Michael A. Vega</strong>
@@ -78,15 +79,6 @@ const LegalNoticeModal: React.FC = () => {
               <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
               Time is of the essence.
             </p>
-          </div>
-
-          <div className="mt-4 flex justify-end">
-            <button
-              onClick={handleClose}
-              className="px-5 py-2.5 bg-zinc-100 hover:bg-white text-zinc-950 font-semibold rounded-lg text-sm transition-all shadow-lg hover:shadow-zinc-700/20 active:scale-95"
-            >
-              I Understand
-            </button>
           </div>
         </div>
       </div>
