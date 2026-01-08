@@ -7,11 +7,18 @@ import MedicalSection from './components/MedicalSection';
 import MediaSection from './components/MediaSection';
 import VoiceAgent from './components/VoiceAgent';
 import LegalNoticeModal from './components/LegalNoticeModal';
+import BackgroundEffect from './components/BackgroundEffect';
 import { ViewState } from './types';
 
 const App: React.FC = () => {
   const [currentView, setView] = useState<ViewState>(ViewState.LANDING);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeThemeColor, setActiveThemeColor] = useState<string | null>(null);
+
+  // Reset theme color when changing views
+  useEffect(() => {
+    setActiveThemeColor(null);
+  }, [currentView]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +40,7 @@ const App: React.FC = () => {
       case ViewState.CASE_ANALYSIS:
         return <CaseAnalysis setView={setView} />;
       case ViewState.THREADS:
-        return <ThreadsSection setView={setView} />;
+        return <ThreadsSection setView={setView} onThemeChange={setActiveThemeColor} />;
       case ViewState.MEDICAL:
         return <MedicalSection setView={setView} />;
       case ViewState.MEDIA:
@@ -45,6 +52,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-200 selection:bg-teal-500 selection:text-white relative">
+      <BackgroundEffect activeColor={activeThemeColor} />
       <LegalNoticeModal />
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-zinc-900/20 z-[100]">

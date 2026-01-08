@@ -35,25 +35,20 @@ interface Thread {
 
 interface ThreadsSectionProps {
   setView: (view: ViewState) => void;
+  onThemeChange?: (color: string | null) => void;
 }
 
-const getColorValue = (colorName: string) => {
-  const colors: Record<string, string> = {
-    indigo: '#6366f1',
-    teal: '#14b8a6',
-    rose: '#f43f5e',
-    amber: '#f59e0b',
-    emerald: '#10b981',
-    red: '#ef4444',
-  };
-  return colors[colorName] || '#14b8a6';
-};
-
-const ThreadsSection: React.FC<ThreadsSectionProps> = ({ setView }) => {
+const ThreadsSection: React.FC<ThreadsSectionProps> = ({ setView, onThemeChange }) => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const toggleThread = (id: number) => {
-    setExpandedId(expandedId === id ? null : id);
+    const newId = expandedId === id ? null : id;
+    setExpandedId(newId);
+    
+    if (onThemeChange) {
+      const activeThread = threads.find(t => t.id === newId);
+      onThemeChange(activeThread ? activeThread.themeColor : null);
+    }
   };
 
   const threads: Thread[] = [
@@ -288,43 +283,8 @@ const ThreadsSection: React.FC<ThreadsSectionProps> = ({ setView }) => {
     }
   ];
 
-  // Determine active color for background effect
-  const activeTheme = expandedId ? threads.find(t => t.id === expandedId)?.themeColor : null;
-
   return (
     <div className="relative min-h-screen">
-       {/* Ambient Dynamic Background - Refined Parallax/Focus Effect */}
-       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-zinc-950">
-          
-          {/* Base Layer - Subtle breathing nebula */}
-          <div 
-            className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${
-              expandedId ? 'opacity-30' : 'opacity-100'
-            }`}
-          >
-             <div className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] bg-teal-900/10 rounded-full blur-[120px] animate-pulse [animation-duration:8s]" />
-             <div className="absolute bottom-[-20%] right-[-10%] w-[70vw] h-[70vw] bg-indigo-900/10 rounded-full blur-[120px] animate-pulse [animation-duration:10s]" />
-          </div>
-
-          {/* Active Highlight Layer - Interpolates color smoothly via inline styles */}
-          <div 
-            className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[150px] mix-blend-screen transition-all duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform,background-color]"
-            style={{
-               backgroundColor: activeTheme ? getColorValue(activeTheme) : 'transparent',
-               opacity: activeTheme ? 0.15 : 0,
-               transform: activeTheme ? 'translate(-50%, 0) scale(1.5)' : 'translate(-50%, 10%) scale(0.8)',
-            }}
-          />
-           <div 
-            className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full blur-[100px] mix-blend-screen transition-all duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform,background-color]"
-            style={{
-               backgroundColor: activeTheme ? getColorValue(activeTheme) : 'transparent',
-               opacity: activeTheme ? 0.1 : 0,
-               transform: activeTheme ? 'translate(0, 0) scale(1.2)' : 'translate(20%, 20%) scale(0.5)',
-            }}
-          />
-      </div>
-
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-8 animate-in slide-in-from-bottom-4 duration-700">
         
         {/* Breadcrumb */}
