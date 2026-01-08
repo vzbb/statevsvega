@@ -33,8 +33,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ setView }) => {
 
            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
              <div className="flex flex-col">
-               <h1 className="relative text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400 font-serif tracking-tight mb-2 drop-shadow-sm">
-                 State v. Vega
+               <h1 className="relative text-5xl md:text-7xl font-bold font-serif tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(20,184,166,0.2)]">
+                 <span className="bg-clip-text text-transparent bg-gradient-to-br from-teal-400 via-white to-indigo-400 animate-gradient">
+                   State v. Vega
+                 </span>
+                 <div className="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-teal-500 to-transparent rounded-full opacity-50" />
                </h1>
                <div className="text-xl text-zinc-400 font-light tracking-wide max-w-2xl leading-relaxed space-y-1">
                  <span className="block text-zinc-200 font-normal">The Exoneration of the Architect.</span>

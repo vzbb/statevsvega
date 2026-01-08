@@ -24,8 +24,11 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center cursor-pointer group" onClick={() => setView(ViewState.LANDING)}>
             <div className="flex-shrink-0">
-              <span className="text-xl font-bold tracking-tighter text-white group-hover:text-teal-400 transition-colors duration-300">
-                STATE v. <span className="text-teal-500 group-hover:text-white transition-colors duration-300">VEGA</span>
+              <span className="text-xl font-bold tracking-tighter transition-all duration-300 flex items-center gap-1.5">
+                <span className="text-white group-hover:text-zinc-200">SAVING</span>
+                <span className="text-zinc-500 font-medium group-hover:text-teal-500/80 transition-colors">THE LIFE</span>
+                <span className="text-zinc-600 font-serif italic text-lg lowercase">of</span>
+                <span className="text-teal-500 group-hover:text-white transition-colors duration-300">VEGA</span>
               </span>
             </div>
           </div>
